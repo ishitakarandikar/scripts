@@ -15,7 +15,7 @@ check_java_home() {
        read -p  "Do you wish to install Java?[Y/N]:" ans
 
     case $ans in
-        [Yy] ) update; install_java; set_javahome ;;
+        [Yy] ) update; install_java;;
         [Nn] ) read -p "Please install java or if you already have Java, Do you wish to set your JAVA_HOME path?[Y/N]:" res
                      case $res in
                      [Yy] ) set_javahome ;;
@@ -27,7 +27,7 @@ check_java_home() {
 
     else 
 	echo 'JAVA_HOME found: '$JAVA_HOME
-       install_tomcat
+        exit 1
         if [ ! -e ${JAVA_HOME} ]
         then
 	    echo 'Invalid JAVA_HOME. Make sure your JAVA_HOME path exists'
@@ -47,10 +47,10 @@ path="JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64""
 if grep "$path" /etc/environment > /dev/null
 then 
  echo "path already set"
-  install_tomcat
+  exit 1
 else
   echo "JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"" >> /etc/environment
-source ./etc/environment
+   echo "export JAVA_HOME" >> /etc/environment
 exit 1
 fi
 
@@ -61,7 +61,6 @@ install_java()
 sudo apt-get install default-jdk
 sudo apt-get install default-jre
 if [ $? -eq 0 ]; then
- echo "Please set JAVA_HOME"
  set_javahome
 else
  echo "Error in Java Installation "
