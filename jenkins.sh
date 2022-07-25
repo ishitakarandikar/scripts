@@ -27,7 +27,7 @@ check_java_home() {
 
     else 
 	echo 'JAVA_HOME found: '$JAVA_HOME
-        exit 1
+        install_tomcat
         if [ ! -e ${JAVA_HOME} ]
         then
 	    echo 'Invalid JAVA_HOME. Make sure your JAVA_HOME path exists'
@@ -72,22 +72,22 @@ fi
 install_tomcat()
 {
 cd /tmp
-if [  -f  "apache-tomcat-9.0.64.tar.gz" ]; then
+if [  -f  "apache-tomcat-9.0.65.tar.gz" ]; then
 echo "Tomcat already exists."
 install_jenkins
 
-elif [[ ! -f "apache-tomcat-9.0.64.tar.gz" ]]; then
+elif [[ ! -f "apache-tomcat-9.0.65.tar.gz" ]]; then
 
 sudo groupadd tomcat
 sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat
 cd /tmp
-curl -O  https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.64/bin/apache-tomcat-9.0.64.tar.gz
+curl -O  https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.65/bin/apache-tomcat-9.0.65.tar.gz
 chmod +rx apache-tomcat-9*tar.gz
 sudo mkdir /opt/tomcat
 sudo tar xzvf apache-tomcat-*tar.gz -C /opt/tomcat --strip-components=1
 
 
-install_jenkins
+install_tomcat
 
 fi
 }
@@ -116,7 +116,7 @@ fi
 jsetup()
 {
 
-cp -r -u /home/ishitakarandikar/test/plugins/. /var/lib/jenkins/plugins
+cp -r -u /home/ishitakarandikar/test1/plugins/. /var/lib/jenkins/plugins
 if [ $? -eq 0 ]; then
 echo "plugins setup success"
 else
@@ -124,7 +124,7 @@ echo "plugins setup failed"
 
 fi 
 
-cp -r -u /home/ishitakarandikar/test/jobs/. /var/lib/jenkins/jobs
+cp -r -u /home/ishitakarandikar/test1/jobs/. /var/lib/jenkins/jobs
 if [ $? -eq 0 ]; then
 echo "jobs setup success"
 else 
@@ -137,7 +137,7 @@ start_jenkins
 start_jenkins()
 {
 sudo /etc/init.d/jenkins start
-echo "please use this command to know your initial password --> sudo more /var/lib/jenkins/secret/initialAdminPaasword"
+echo "please use this command to know your initial password --> sudo more /var/lib/jenkins/secrets/initialAdminPassword"
 }
 
 echo 'Installing jenkins...'
