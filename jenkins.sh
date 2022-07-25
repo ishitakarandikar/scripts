@@ -70,23 +70,12 @@ fi
 }
 
 
-test()
-{
-cd /tmp
-
-if  [  -f "apache-tomcat-9.0.64.tar.gz" ];
-then
-echo "hello"
-else
-echo "y"
-fi
-
-}
 install_tomcat()
 {
 cd /tmp
 if [  -f  "apache-tomcat-9.0.64.tar.gz" ]; then
 echo "Tomcat already exists."
+install_jenkins
 
 elif [[ ! -f "apache-tomcat-9.0.64.tar.gz" ]]; then
 
@@ -99,21 +88,11 @@ sudo mkdir /opt/tomcat
 sudo tar xzvf apache-tomcat-*tar.gz -C /opt/tomcat --strip-components=1
 
 
-
+install_jenkins
 
 fi
 }
 
-tomcat_start()
-{
-read -p  "Do you wish to start tomcat?[Y/N]:" ans
-
-    case $ans in
-        [Yy] ) cd /opt/tomcat/bin; ./startup.sh; echo "please check localhost";;
-        [Nn] ) echo "Okay";;
-    esac
-
-}
 
 install_jenkins()
 {
@@ -126,17 +105,40 @@ e>     /etc/apt/sources.list.d/jenkins.list'
 sudo apt-get update
 sudo apt-get install jenkins 
 
+jsetup
+
 else
 echo "jenkins already exists"
+jsetup
 
 fi 
 
+}
+jsetup()
+{
+
+cp -r -u /home/ishitakarandikar/test/plugins/. /var/lib/jenkins/plugins
+if [ $? -eq 0 ]; then
+echo "plugins setup success"
+else
+echo "plugins setup failed"
+
+fi 
+
+cp -r -u /home/ishitakarandikar/test/jobs/. /var/lib/jenkins/jobs
+if [ $? -eq 0 ]; then
+echo "jobs setup success"
+else 
+echo "jobs setup failure"
+fi
+
+start_jenkins
 }
 
 start_jenkins()
 {
 sudo /etc/init.d/jenkins start
-
+echo "please use this command to know your initial password --> sudo more /var/lib/jenkins/secret/initialAdminPaasword"
 }
 
 echo 'Installing jenkins...'
@@ -144,32 +146,7 @@ update
 if [ $? -eq 0  ]; then
      echo 'Checking for JAVA_HOME...'
      check_java_home
-      if [ $? -eq 0  ]; then
-      echo 'Checking for tomcat...'
-      install_tomcat
-           if [ $? -eq 0  ]; then
-           echo "Setup okay for jenkins"
-            install_jenkins
-                   
-                    if [ $? -eq 0 ]; then
-                     read -p  "Do you wish to setup you Jenkins?[Y/N]:" ans 
-                        case $ans in
-                       [Yy] ) start_jenkins ; echo "please use the following password then setup username password"; 
-     echo "please use this command to know your password --> sudo cat /var/lib/jenkins/secrets/initialAdminPassword";;
-                           [Nn] ) echo "Okay";;
-                         esac
-                    else 
-                    echo "Okay"
-                     fi
-
-
-           else 
-          echo "Cannot install jenkins.. check on tomcat"
-            fi
-      else
-      echo "JAVA_PATH is not set" 
-fi
-
+      
 else
 sudo apt-get upgrade
 fi
