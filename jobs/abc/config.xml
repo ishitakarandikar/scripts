@@ -1,0 +1,60 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1189.va_d37a_e9e4eda_">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@2.2097.v33db_b_de764b_e"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@2.2097.v33db_b_de764b_e">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2725.v7b_c717eb_12ce">
+    <script>pipeline {
+    agent any
+ tools{
+    maven &apos;maven3.6&apos;
+ }
+    stages {
+       stage(&apos;Clone&apos;)
+       {
+           steps{
+  git url: &apos;https://github.com/ishitakarandikar/springbootapp&apos; , branch : &apos;main&apos;
+           }
+       }
+        stage(&apos;Build&apos;) {
+            steps {
+                
+        sh &apos;mvn package&apos;
+        //dir(&quot;${env.WORKSPACE}//var/lib/jenkins/workspace/springapp/target&quot;){
+    //sh &quot;pwd&quot;
+   
+//}
+       
+      // sh &quot;mv target/*.war target/springapp.war&quot;
+    
+            }
+        }
+         stage(&apos;Deploy&apos;) {
+            steps {
+               //  sh &apos;chmod +x ${env.WORKSPACE}//var/lib/jenkins/workspace/springapp/target/$MyWebApp-0.0.1-SNAPSHOT.war&apos;
+             //  script {
+                   deploy adapters: [tomcat9(credentialsId: &apos;ishita&apos;, path: &apos;/var/lib/jenkins/workspace/springapp/target/MyWebApp-0.0.1-SNAPSHOT.war&apos;, url: &apos;http://localhost:5050/MyWebApp-0.0.1-SNAPSHOT&apos;)], contextPath: &apos;/pipeline&apos;, onFailure: false, war: &apos;webapp/target/*.war&apos;
+               //}
+               
+   // sh &apos;scp /var/lib/jenkins/workspace/springapp/target/MyWebApp-0.0.1-SNAPSHOT.war /opt/tomcat/webapps&apos;
+        
+            }
+            }
+        }
+    }
+
+</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

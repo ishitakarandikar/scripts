@@ -1,0 +1,83 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<Tag plugin="workflow-support@820.vd1a_6cc65ef33">
+  <node class="cps.n.StepAtomNode" plugin="workflow-cps@2725.v7b_c717eb_12ce">
+    <parentIds>
+      <string>42</string>
+    </parentIds>
+    <id>43</id>
+    <descriptorId>org.jenkinsci.plugins.workflow.steps.CoreStep</descriptorId>
+  </node>
+  <actions>
+    <cps.a.ArgumentsActionImpl plugin="workflow-cps@2725.v7b_c717eb_12ce">
+      <arguments>
+        <entry>
+          <string>delegate</string>
+          <org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable plugin="structs@318.va_f3ccb_729b_71">
+            <symbol>deploy</symbol>
+            <arguments class="tree-map">
+              <entry>
+                <string>adapters</string>
+                <list>
+                  <org.jenkinsci.plugins.workflow.cps.UninstantiatedDescribableWithInterpolation plugin="workflow-cps@2725.v7b_c717eb_12ce">
+                    <symbol>tomcat9</symbol>
+                    <arguments class="linked-hash-map">
+                      <entry>
+                        <string>credentialsId</string>
+                        <string>ishita/pass</string>
+                      </entry>
+                      <entry>
+                        <string>path</string>
+                        <string></string>
+                      </entry>
+                      <entry>
+                        <string>url</string>
+                        <string>http://localhost:5050/springapp</string>
+                      </entry>
+                    </arguments>
+                    <interpolatedStrings/>
+                  </org.jenkinsci.plugins.workflow.cps.UninstantiatedDescribableWithInterpolation>
+                </list>
+              </entry>
+              <entry>
+                <string>contextPath</string>
+                <string>/pipeline</string>
+              </entry>
+              <entry>
+                <string>onFailure</string>
+                <boolean>false</boolean>
+              </entry>
+              <entry>
+                <string>war</string>
+                <string>webapp/target/*.war</string>
+              </entry>
+            </arguments>
+          </org.jenkinsci.plugins.structs.describable.UninstantiatedDescribable>
+        </entry>
+      </arguments>
+      <sensitiveVariables/>
+      <isUnmodifiedBySanitization>true</isUnmodifiedBySanitization>
+    </cps.a.ArgumentsActionImpl>
+    <wf.a.TimingAction plugin="workflow-api@1164.v760c223ddb_32">
+      <startTime>1657717672719</startTime>
+    </wf.a.TimingAction>
+    <s.a.LogStorageAction/>
+    <wf.a.ErrorAction plugin="workflow-api@1164.v760c223ddb_32">
+      <error class="java.lang.InterruptedException">
+        <detailMessage>[DeployPublisher][WARN] No wars found. Deploy aborted. %n</detailMessage>
+        <stackTrace>
+          <trace>hudson.plugins.deploy.DeployPublisher.perform(DeployPublisher.java:107)</trace>
+          <trace>jenkins.tasks.SimpleBuildStep.perform(SimpleBuildStep.java:123)</trace>
+          <trace>org.jenkinsci.plugins.workflow.steps.CoreStep$Execution.run(CoreStep.java:101)</trace>
+          <trace>org.jenkinsci.plugins.workflow.steps.CoreStep$Execution.run(CoreStep.java:71)</trace>
+          <trace>org.jenkinsci.plugins.workflow.steps.SynchronousNonBlockingStepExecution.lambda$start$0(SynchronousNonBlockingStepExecution.java:47)</trace>
+          <trace>java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)</trace>
+          <trace>java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)</trace>
+          <trace>java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)</trace>
+          <trace>java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)</trace>
+          <trace>java.base/java.lang.Thread.run(Thread.java:829)</trace>
+        </stackTrace>
+        <suppressedExceptions class="empty-list"/>
+      </error>
+    </wf.a.ErrorAction>
+  </actions>
+</Tag>

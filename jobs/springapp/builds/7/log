@@ -1,0 +1,136 @@
+Started by user [8mha:////4CNNIzZcgdR/6zHYuZe1tgSTm8WPDMr+20lN9Uz6VQl9AAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzBEgYx/dLi1CL9zOKMzJLE7MSixLyUTCAFAKtr9P3LAAAA[0mIshita karandikar
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/springapp
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] Done
+The recommended git tool is: NONE
+using credential 75c599b3-6a0d-4a53-9079-774a807a0989
+Cloning the remote Git repository
+Cloning repository https://github.com/ishitakarandikar/springbootapp
+ > /usr/bin/git init /var/lib/jenkins/workspace/springapp # timeout=10
+Fetching upstream changes from https://github.com/ishitakarandikar/springbootapp
+ > /usr/bin/git --version # timeout=10
+ > git --version # 'git version 2.17.1'
+using GIT_ASKPASS to set credentials 
+ > /usr/bin/git fetch --tags --progress -- https://github.com/ishitakarandikar/springbootapp +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > /usr/bin/git config remote.origin.url https://github.com/ishitakarandikar/springbootapp # timeout=10
+ > /usr/bin/git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > /usr/bin/git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision be82010ab01d8db0bac38820eb219b02a9549225 (refs/remotes/origin/main)
+ > /usr/bin/git config core.sparsecheckout # timeout=10
+ > /usr/bin/git checkout -f be82010ab01d8db0bac38820eb219b02a9549225 # timeout=10
+Commit message: "First commit"
+ > /usr/bin/git rev-list --no-walk be82010ab01d8db0bac38820eb219b02a9549225 # timeout=10
+[springapp] $ mvn package
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$1 (file:/usr/share/maven/lib/guice.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$1
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m-----------------------< [0;36mcom.mycompany:MyWebApp[0;1m >-----------------------[m
+[[1;34mINFO[m] [1mBuilding MyWebApp 0.0.1-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ war ]---------------------------------[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:resources[m [1m(default-resources)[m @ [36mMyWebApp[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] Copying 1 resource
+[[1;34mINFO[m] Copying 3 resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.10.1:compile[m [1m(default-compile)[m @ [36mMyWebApp[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 7 source files to /var/lib/jenkins/workspace/springapp/target/classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:3.2.0:testResources[m [1m(default-testResources)[m @ [36mMyWebApp[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered properties files.
+[[1;34mINFO[m] skip non existing resourceDirectory /var/lib/jenkins/workspace/springapp/src/test/resources
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.10.1:testCompile[m [1m(default-testCompile)[m @ [36mMyWebApp[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 1 source file to /var/lib/jenkins/workspace/springapp/target/test-classes
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.22.2:test[m [1m(default-test)[m @ [36mMyWebApp[0;1m ---[m
+[[1;34mINFO[m] 
+[[1;34mINFO[m] [1m--- [0;32mmaven-war-plugin:3.1.0:war[m [1m(default-war)[m @ [36mMyWebApp[0;1m ---[m
+[[1;34mINFO[m] Packaging webapp
+[[1;34mINFO[m] Assembling webapp [MyWebApp] in [/var/lib/jenkins/workspace/springapp/target/MyWebApp-0.0.1-SNAPSHOT]
+[[1;34mINFO[m] Processing war project
+[[1;34mINFO[m] Webapp assembled in [657 msecs]
+[[1;34mINFO[m] Building war: /var/lib/jenkins/workspace/springapp/target/MyWebApp-0.0.1-SNAPSHOT.war
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  11.648 s
+[[1;34mINFO[m] Finished at: 2022-07-05T12:13:57Z
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[DeployPublisher][INFO] Attempting to deploy 1 war file(s)
+[DeployPublisher][INFO] Deploying /var/lib/jenkins/workspace/springapp/target/MyWebApp-0.0.1-SNAPSHOT.war to container Tomcat 9.x Remote with context springapp
+ERROR: Build step failed with exception
+org.codehaus.cargo.container.ContainerException: Failed to redeploy [/var/lib/jenkins/workspace/springapp/target/MyWebApp-0.0.1-SNAPSHOT.war]
+	at org.codehaus.cargo.container.tomcat.internal.AbstractTomcatManagerDeployer.redeploy(AbstractTomcatManagerDeployer.java:176)
+	at hudson.plugins.deploy.CargoContainerAdapter.deploy(CargoContainerAdapter.java:81)
+	at hudson.plugins.deploy.CargoContainerAdapter$DeployCallable.invoke(CargoContainerAdapter.java:167)
+	at hudson.plugins.deploy.CargoContainerAdapter$DeployCallable.invoke(CargoContainerAdapter.java:136)
+	at hudson.FilePath.act(FilePath.java:1200)
+	at hudson.FilePath.act(FilePath.java:1183)
+	at hudson.plugins.deploy.CargoContainerAdapter.redeployFile(CargoContainerAdapter.java:133)
+	at hudson.plugins.deploy.PasswordProtectedAdapterCargo.redeployFile(PasswordProtectedAdapterCargo.java:95)
+	at hudson.plugins.deploy.DeployPublisher.perform(DeployPublisher.java:113)
+	at jenkins.tasks.SimpleBuildStep.perform(SimpleBuildStep.java:123)
+	at hudson.tasks.BuildStepCompatibilityLayer.perform(BuildStepCompatibilityLayer.java:79)
+	at hudson.tasks.BuildStepMonitor$3.perform(BuildStepMonitor.java:47)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:816)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.performAllBuildSteps(AbstractBuild.java:765)
+	at hudson.model.Build$BuildExecution.post2(Build.java:179)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.post(AbstractBuild.java:709)
+	at hudson.model.Run.execute(Run.java:1922)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:44)
+	at hudson.model.ResourceController.execute(ResourceController.java:101)
+	at hudson.model.Executor.run(Executor.java:442)
+Caused by: org.codehaus.cargo.container.tomcat.internal.TomcatManagerException: The username and password you provided are not correct (error 401)
+	at org.codehaus.cargo.container.tomcat.internal.TomcatManager.invoke(TomcatManager.java:704)
+	at org.codehaus.cargo.container.tomcat.internal.TomcatManager.list(TomcatManager.java:882)
+	at org.codehaus.cargo.container.tomcat.internal.TomcatManager.getStatus(TomcatManager.java:895)
+	at org.codehaus.cargo.container.tomcat.internal.AbstractTomcatManagerDeployer.redeploy(AbstractTomcatManagerDeployer.java:161)
+	... 19 more
+Caused by: java.io.IOException: Server returned HTTP response code: 401 for URL: http://localhost:5050/manager/text/list
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at org.codehaus.cargo.container.tomcat.internal.TomcatManager.invoke(TomcatManager.java:577)
+	... 22 more
+org.codehaus.cargo.container.tomcat.internal.TomcatManagerException: The username and password you provided are not correct (error 401)
+	at org.codehaus.cargo.container.tomcat.internal.TomcatManager.invoke(TomcatManager.java:704)
+	at org.codehaus.cargo.container.tomcat.internal.TomcatManager.list(TomcatManager.java:882)
+	at org.codehaus.cargo.container.tomcat.internal.TomcatManager.getStatus(TomcatManager.java:895)
+	at org.codehaus.cargo.container.tomcat.internal.AbstractTomcatManagerDeployer.redeploy(AbstractTomcatManagerDeployer.java:161)
+	at hudson.plugins.deploy.CargoContainerAdapter.deploy(CargoContainerAdapter.java:81)
+	at hudson.plugins.deploy.CargoContainerAdapter$DeployCallable.invoke(CargoContainerAdapter.java:167)
+	at hudson.plugins.deploy.CargoContainerAdapter$DeployCallable.invoke(CargoContainerAdapter.java:136)
+	at hudson.FilePath.act(FilePath.java:1200)
+	at hudson.FilePath.act(FilePath.java:1183)
+	at hudson.plugins.deploy.CargoContainerAdapter.redeployFile(CargoContainerAdapter.java:133)
+	at hudson.plugins.deploy.PasswordProtectedAdapterCargo.redeployFile(PasswordProtectedAdapterCargo.java:95)
+	at hudson.plugins.deploy.DeployPublisher.perform(DeployPublisher.java:113)
+	at jenkins.tasks.SimpleBuildStep.perform(SimpleBuildStep.java:123)
+	at hudson.tasks.BuildStepCompatibilityLayer.perform(BuildStepCompatibilityLayer.java:79)
+	at hudson.tasks.BuildStepMonitor$3.perform(BuildStepMonitor.java:47)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:816)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.performAllBuildSteps(AbstractBuild.java:765)
+	at hudson.model.Build$BuildExecution.post2(Build.java:179)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.post(AbstractBuild.java:709)
+	at hudson.model.Run.execute(Run.java:1922)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:44)
+	at hudson.model.ResourceController.execute(ResourceController.java:101)
+	at hudson.model.Executor.run(Executor.java:442)
+Caused by: java.io.IOException: Server returned HTTP response code: 401 for URL: http://localhost:5050/manager/text/list
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1924)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1520)
+	at org.codehaus.cargo.container.tomcat.internal.TomcatManager.invoke(TomcatManager.java:577)
+	... 22 more
+Build step 'Deploy war/ear to a container' marked build as failure
+Finished: FAILURE

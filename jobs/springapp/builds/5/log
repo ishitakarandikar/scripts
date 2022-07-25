@@ -1,0 +1,32 @@
+Started by user [8mha:////4CNNIzZcgdR/6zHYuZe1tgSTm8WPDMr+20lN9Uz6VQl9AAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzBEgYx/dLi1CL9zOKMzJLE7MSixLyUTCAFAKtr9P3LAAAA[0mIshita karandikar
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/springapp
+[WS-CLEANUP] Deleting project workspace...
+[WS-CLEANUP] Deferred wipeout is used...
+[WS-CLEANUP] Done
+The recommended git tool is: NONE
+using credential 75c599b3-6a0d-4a53-9079-774a807a0989
+Cloning the remote Git repository
+Cloning repository https://github.com/ishitakarandikar/springbootapp
+ > /usr/bin/git init /var/lib/jenkins/workspace/springapp # timeout=10
+Fetching upstream changes from https://github.com/ishitakarandikar/springbootapp
+ > /usr/bin/git --version # timeout=10
+ > git --version # 'git version 2.17.1'
+using GIT_ASKPASS to set credentials 
+ > /usr/bin/git fetch --tags --progress -- https://github.com/ishitakarandikar/springbootapp +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > /usr/bin/git config remote.origin.url https://github.com/ishitakarandikar/springbootapp # timeout=10
+ > /usr/bin/git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > /usr/bin/git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision be82010ab01d8db0bac38820eb219b02a9549225 (refs/remotes/origin/main)
+ > /usr/bin/git config core.sparsecheckout # timeout=10
+ > /usr/bin/git checkout -f be82010ab01d8db0bac38820eb219b02a9549225 # timeout=10
+Commit message: "First commit"
+ > /usr/bin/git rev-list --no-walk be82010ab01d8db0bac38820eb219b02a9549225 # timeout=10
+[springapp] $ mvn clean compile package
+The JAVA_HOME environment variable is not defined correctly
+This environment variable is needed to run this program
+NB: JAVA_HOME should point to a JDK not a JRE
+Build step 'Invoke top-level Maven targets' marked build as failure
+[DeployPublisher][INFO] Build failed, project not deployed
+Finished: FAILURE

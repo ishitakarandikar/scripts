@@ -1,0 +1,47 @@
+Started by user [8mha:////4CNNIzZcgdR/6zHYuZe1tgSTm8WPDMr+20lN9Uz6VQl9AAAAoR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzBEgYx/dLi1CL9zOKMzJLE7MSixLyUTCAFAKtr9P3LAAAA[0mIshita karandikar
+Running as SYSTEM
+Building in workspace /var/lib/jenkins/workspace/Hello
+The recommended git tool is: NONE
+using credential 75c599b3-6a0d-4a53-9079-774a807a0989
+No credentials specified
+ > /usr/bin/git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/Hello/.git # timeout=10
+Fetching changes from 2 remote Git repositories
+ > /usr/bin/git config remote.origin.url https://github.com/ishitakarandikar/jenkinshello # timeout=10
+Fetching upstream changes from https://github.com/ishitakarandikar/jenkinshello
+ > /usr/bin/git --version # timeout=10
+ > git --version # 'git version 2.17.1'
+using GIT_ASKPASS to set credentials 
+ > /usr/bin/git fetch --tags --progress -- https://github.com/ishitakarandikar/jenkinshello +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > /usr/bin/git config remote.origin1.url https://github.com/ishitakarandikar/jenkinshello # timeout=10
+Fetching upstream changes from https://github.com/ishitakarandikar/jenkinshello
+using GIT_ASKPASS to set credentials 
+ > /usr/bin/git fetch --tags --progress -- https://github.com/ishitakarandikar/jenkinshello +refs/heads/*:refs/remotes/origin1/* # timeout=10
+Seen branch in repository origin/main
+Seen branch in repository origin1/main
+Seen 2 remote branches
+ > /usr/bin/git show-ref --tags -d # timeout=10
+Checking out Revision 815b5f92e10facb11be64242d53c076bf98a7228 (origin/main, origin1/main)
+ > /usr/bin/git config core.sparsecheckout # timeout=10
+ > /usr/bin/git checkout -f 815b5f92e10facb11be64242d53c076bf98a7228 # timeout=10
+Commit message: "initial commit"
+ > /usr/bin/git rev-list --no-walk 815b5f92e10facb11be64242d53c076bf98a7228 # timeout=10
+ > /usr/bin/git rev-list --no-walk 815b5f92e10facb11be64242d53c076bf98a7228 # timeout=10
+[Hello] $ /bin/sh -xe /tmp/jenkins17925826445700141852.sh
++ javac hello.java
++ java hello
+hello
+ERROR: Step ‘Deploy war/ear to a container’ aborted due to exception: 
+java.lang.InterruptedException: [DeployPublisher][WARN] No wars found. Deploy aborted. %n
+	at hudson.plugins.deploy.DeployPublisher.perform(DeployPublisher.java:107)
+	at jenkins.tasks.SimpleBuildStep.perform(SimpleBuildStep.java:123)
+	at hudson.tasks.BuildStepCompatibilityLayer.perform(BuildStepCompatibilityLayer.java:79)
+	at hudson.tasks.BuildStepMonitor$3.perform(BuildStepMonitor.java:47)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.perform(AbstractBuild.java:816)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.performAllBuildSteps(AbstractBuild.java:765)
+	at hudson.model.Build$BuildExecution.post2(Build.java:179)
+	at hudson.model.AbstractBuild$AbstractBuildExecution.post(AbstractBuild.java:709)
+	at hudson.model.Run.execute(Run.java:1922)
+	at hudson.model.FreeStyleBuild.run(FreeStyleBuild.java:44)
+	at hudson.model.ResourceController.execute(ResourceController.java:101)
+	at hudson.model.Executor.run(Executor.java:442)
+Finished: FAILURE

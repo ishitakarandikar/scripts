@@ -1,0 +1,13 @@
+Started on Jul 20, 2022, 5:41:00 PM
+Using strategy: Default
+[poll] Last Built Revision: Revision 9b6c63c86d90d314518c5e8fbee92cf9a9da6b2d (refs/remotes/origin/main)
+The recommended git tool is: NONE
+using credential 75c599b3-6a0d-4a53-9079-774a807a0989
+ > /usr/bin/git --version # timeout=10
+ > git --version # 'git version 2.17.1'
+using GIT_ASKPASS to set credentials 
+ > /usr/bin/git ls-remote -h -- https://github.com/ishitakarandikar/springbootapp # timeout=10
+Found 1 remote heads on https://github.com/ishitakarandikar/springbootapp
+[poll] Latest remote head revision on refs/heads/main is: 9b6c63c86d90d314518c5e8fbee92cf9a9da6b2d - already built by 16
+Done. Took 0.79 sec
+No changes
