@@ -116,7 +116,7 @@ fi
 jsetup()
 {
 
-cp -r -u /home/ishitakarandikar/test1/plugins/. /var/lib/jenkins/plugins
+cp -r -u /home/ubuntu/scripts/plugins/. /var/lib/jenkins/plugins
 if [ $? -eq 0 ]; then
 echo "plugins setup success"
 else
@@ -124,7 +124,7 @@ echo "plugins setup failed"
 
 fi 
 
-cp -r -u /home/ishitakarandikar/test1/jobs/. /var/lib/jenkins/jobs
+cp -r -u /home/ubuntu/scripts/jobs/. /var/lib/jenkins/jobs
 if [ $? -eq 0 ]; then
 echo "jobs setup success"
 else 
